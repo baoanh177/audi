@@ -1,0 +1,189 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    padding: 0 var(--paddingY);
+    background-color: #fff;
+    .menu {
+        display: flex;
+        align-items: center;
+        .logo {
+            margin-right: var(--spaceBetweenLogoMenu);
+            width: var(--headerLogoWidth);
+        }
+        nav {
+            position: relative;
+            ul {
+                display: flex;
+                .active {
+                    > a {
+                        color: #000;
+                        padding-bottom: 0.2em;
+                        border-bottom: 3px solid #000;
+                    }
+                }
+                li {
+                    flex-grow: 1;
+                    margin-right: 24px;
+                    a {
+                        font-size: 1.6rem;
+                        line-height: 24px;
+                        color: #666;
+                        &:hover {
+                            color: #000;
+                        }
+                    }
+                    .dropDown {
+                        display: flex;
+                        align-items: flex-start;
+                        position: fixed;
+                        top: var(--headerHeight);
+                        left: 0;
+                        right: 0;
+                        padding: 50px var(--paddingY);
+                        background-color: #fff;
+                        ul {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            justify-content: space-between;
+                            width: 60%;
+                            padding: 0 var(--paddingY) 0 calc(var(--paddingY) +
+                                     var(--headerLogoWidth) + var(--spaceBetweenLogoMenu));
+                            li {
+                                margin-bottom: 24px;
+                                a {
+
+                                }
+                            }
+                        }
+                        .more {
+                            position: relative;
+                            width: 30vw;
+                            div {
+                                position: relative;
+                                img {
+                                    max-width: 100%;
+                                }
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    display: block;
+                                    inset: 0;
+                                    background-image: linear-gradient(transparent, transparent 70%, rgb(0, 0, 0) 100%);
+                                }
+                            }
+                            a {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                width: 100%;
+                                position: absolute;
+                                bottom: 0;
+                                padding: 15px;
+                                font-size: 1.8rem;
+                                line-height: 28px;
+                                letter-spacing: 1.6px;
+                                color: #e5e5e5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .search {
+        cursor: pointer;
+    }
+    #searchToggle:checked ~ .searchWindow {
+        opacity: 1;
+        visibility: visible;
+    }
+    #searchToggle:checked ~ .overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+    .searchWindow {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        left: 0;
+        padding: 0 var(--paddingY);
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s, visibility 0.2s;
+        z-index: 99;
+        > label i {
+            top: 25px;
+            left: var(--paddingY);
+            position: absolute;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+        .box {
+            padding: 15px 0 52px 0;
+            .search {
+                position: relative;
+                border-bottom: 2px solid #000;
+                input {
+                    padding-left: 30px;
+                    width: 30vw;
+                    width: 576px;
+                    height: 34px;
+                    border-radius: 2px;
+                    border: none;
+                    outline: none;
+                    &::placeholder {
+                        font-size: 1.6rem;
+                        line-height: 30px;
+                    }
+                    &:focus {
+                        border: 2px solid #333;
+                    }
+                }
+                i {
+                    position: absolute;
+                    top: 50%;
+                    left: 5px;
+                    transform: translateY(-50%);
+                    font-size: 1.6rem;
+                }
+            }
+            .quickLinks {
+                span {
+                    display: block;
+                    margin-top: 40px;
+                    font-size: 1.2rem;
+                    margin-bottom: 16px;
+                }
+                .links {
+                    li {
+                        padding: 8px 0;
+                        line-height: 24px;
+                        transition: background-color 0.2s;
+                        &:hover {
+                            background-color: rgb(242, 242, 242);
+                            color: #4c4c4c;
+                            cursor: pointer;
+                        }
+                        a {
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}

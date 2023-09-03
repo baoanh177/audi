@@ -1,0 +1,33 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import './Variables.scss';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Play', sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    background-color: #eee;
+    ::selection {
+        background-color: #f50537;
+        color: #fff;
+    }
+}
