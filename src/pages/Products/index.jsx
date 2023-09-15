@@ -1,11 +1,11 @@
 import DefaultLayout from "~/components/Layouts/DefaultLayout";
 
-function Home() {
+function Products() {
     return (
         <DefaultLayout>
-            
+            <h1>Products is coming soon...</h1>
         </DefaultLayout>
-    );
+    )
 }
 
-export default Home;
+export default Products;

@@ -1,13 +1,14 @@
 import { Routes, Route } from "react-router-dom"
-import Home from "~/pages/Home"
-import Products from "~/pages/Products"
+import { publicRoute, privateRoute } from "./routes"
 
 function App() {
     return (
         <div className="App">
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/products" element={<Products />} />
+                {publicRoute.map((route, index) => {
+                    const Page = route.component
+                    return <Route key={index} path={route.path} element={<Page />} />
+                })}
             </Routes>
         </div>
     )

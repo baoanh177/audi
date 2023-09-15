@@ -1,6 +1,8 @@
 :root {
+    --content-width: 1327px;
     --primaryColor: #000;
-    --paddingY: calc((100% - 1327px) / 2);
+    --paddingY: calc((100% - var(--content-width)) / 2);
+    --mb-paddingY: 20px;
     --headerHeight: 72px;
     --headerLogoWidth: 69px;
     --spaceBetweenLogoMenu: 32px;

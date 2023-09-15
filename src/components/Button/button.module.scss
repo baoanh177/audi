@@ -1,0 +1,45 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 16px 32px;
+    border: 1px solid transparent;
+
+    &.darkSolid {
+        background-color: #000;
+        color: #fff;
+    }
+    &.lightSolid {
+        background-color: #fff;
+        color: #000;
+    }
+    &.darkNoBg {
+        background-color: transparent;
+        color: #000;
+        border-color: #000;
+    }
+    &.lightNoBg {
+        background-color: transparent;
+        color: #fff;
+        border-color: #fff;
+    }
+    &.sm {
+        min-width: 180px;
+    }
+    &.md {
+        min-width: 200px;
+    }
+    &.fu {
+        width: 100%;
+    }
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+

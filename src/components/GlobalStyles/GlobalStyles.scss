@@ -1,6 +1,7 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
-@import './Variables.scss';
+@import './components/variables.scss';
+@import './components/mixin.scss';
 
 * {
     box-sizing: border-box;
@@ -25,7 +26,7 @@ body {
     font-family: 'Play', sans-serif;
     font-weight: 400;
     line-height: 1;
-    background-color: #eee;
+    height: 10000px;
     ::selection {
         background-color: #f50537;
         color: #fff;
