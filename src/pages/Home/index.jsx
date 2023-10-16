@@ -7,7 +7,6 @@ function Home() {
             <DefaultLayout>
                 <Hero />
             </DefaultLayout>
-            
         </>
     );
 }

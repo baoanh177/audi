@@ -1,0 +1,121 @@
+@import "../../../../../GlobalStyles/components/mixin.scss";
+
+.menuWrapper {
+    margin-left: var(--spaceBetweenLogoMenu);
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+    font-size: 1.6rem;
+    line-height: 24px;
+    color: #666;
+    > li {
+        border-bottom: 2px solid transparent;
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+.searchBtn {
+    padding-right: var(--spaceBetweenLogoMenu);
+    margin-left: auto;
+    font-size: 1.6rem;
+    color: #666;
+    &:hover {
+        color: #000;
+        cursor: pointer;
+    }
+}
+
+.dropMenu {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 52px var(--paddingY) 80px calc(var(--paddingY) + var(--headerLogoWidth) + var(--spaceBetweenLogoMenu));
+    opacity: 0;
+    visibility: hidden;
+    background-color: #fff;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.categories {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 24px;
+}
+
+.category {
+    a {
+        color: #666;
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+.bannerWrapper {
+    position: relative;
+    width: 30vw;
+    margin-left: auto;
+}
+
+.banner {
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        inset: 0;
+        background-image: linear-gradient(
+            transparent,
+            transparent 70%,
+            rgb(0, 0, 0) 100%
+        );
+    }
+}
+
+.bannerLink {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 0;
+    padding: 15px;
+    font-size: 1.8rem;
+    line-height: 28px;
+    letter-spacing: 1.6px;
+    color: #e5e5e5;
+}
+
+.logo {
+    z-index: 100;
+}
+
+li.active {
+    border-bottom: 2px solid #000;
+    color: #000;
+}
+@include responsive(desktop-md) {
+    .dropMenu {
+        padding: 52px 20px 80px calc(var(--headerLogoWidth) + var(--spaceBetweenLogoMenu));
+    }
+
+}
+@include responsive(laptop) {
+    .categories {
+        grid-template-columns: 1fr;
+    }
+    .bannerWrapper {
+        width: 40vw;
+    }
+}

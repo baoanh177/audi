@@ -1,19 +1,18 @@
 @mixin responsive($device: desktop) {
-    $devices: (
-      desktop: 1400.98,
-      desktop-md: 1347.98,
-      laptop: 1200.98,
-      tablet: 992.98,
-      tablet-md: 840.98,
-      mobile: 768.98,
-      mobile-md: 576.98,
-    );
-    @each $deviceName, $deviceWidth in $devices {
-      @if $device == $deviceName {
-        @media (max-width: #{$deviceWidth}px) {
-          @content;
-        }
-      }
+$devices: (
+  desktop: 1400.98,
+  desktop-md: 1347.98,
+  laptop: 1200.98,
+  tablet: 992.98,
+  tablet-md: 840.98,
+  mobile: 768.98,
+  mobile-md: 576.98,
+);
+@each $deviceName, $deviceWidth in $devices {
+  @if $device == $deviceName {
+    @media (max-width: #{$deviceWidth}px) {
+      @content;
     }
   }
-  
+}
+}

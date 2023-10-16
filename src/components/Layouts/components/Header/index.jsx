@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react"
-import getData from "~/components/API"
-import images from "~/assets/images"
-import Styles from "./header.module.scss"
-import Search from "./components/Search"
-import Menu from "./components/Menu"
+import { useEffect, useState } from "react";
+import getData from "~/components/API";
+import cl from './header.module.scss'
+import DesktopHeader from './components/DesktopHeader';
 
 function Header() {
     const [data, setData] = useState()
@@ -16,30 +14,21 @@ function Header() {
     }, [])
 
     return (
-        <header>
-            <div className={Styles.menu}>
-                <a className={Styles.logo} href="/">
-                    <img src={images.logo} alt="Audi" />
-                </a>
-
-                <Menu 
-                    props={{
-                        Styles,
-                        categories: data && data.categories,
-                        active,
-                        setActive
-                    }}
-                />
-            </div>
-            <Search
-                props={{
-                    styles: Styles,
-                    data: data && data.quickLinks,
-                    setActive
-                }}
-            />
-        </header>
+        <>
+            <header className={cl.header}>
+                <DesktopHeader props={{data: data, active, setActive}}/>
+            </header>
+            <div
+                className={cl.overlay}
+                style={
+                    active != null ? 
+                    {opacity: 1, visibility: 'visible'}:
+                    {}
+                }
+                onClick={() => setActive(null)}
+            ></div>
+        </>
     )
 }
 
-export default Header
+export default Header;
